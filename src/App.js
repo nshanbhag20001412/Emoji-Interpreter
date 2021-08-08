@@ -13,8 +13,11 @@ const summerEmojis = {
 const emojis = Object.keys(summerEmojis);
 
 export default function App() {
-  const [emoji, setEmoji] = useState(""); /** concept 2 is useState */
-  const [meaning, setMeaning] = useState("translation will appear here..");
+  const imageUrl =
+    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=753&q=80";
+
+  const [emoji, setEmoji] = useState("");
+  const [meaning, setMeaning] = useState("Translation will appear here..");
 
   function changeHandler(event) {
     const inputEmoji = event.target.value;
@@ -32,8 +35,14 @@ export default function App() {
   }
 
   return (
-    /** concept 3 is onchange */
-    <div className="App">
+    <div
+      className="App"
+      style={{
+        backgroundImage: `url(${imageUrl})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover"
+      }}
+    >
       <h1>Check out Summer Emojis</h1>
       <input
         onChange={changeHandler}
@@ -44,24 +53,17 @@ export default function App() {
           minWidth: "80%"
         }}
       />
-      <h2> {emoji} </h2> {/** Concept 1: JSX */}
-      <h3> {meaning} </h3> {/** how much part is re-rendered. */}
-      {
-        /** Bonus feature; if time permmits */
-        /**
-         * concepts to cover: mapping a list
-         * click handler on list item
-         */
-        emojis.map((emoji) => (
-          <span
-            onClick={() => emojiClickHandler(emoji)}
-            style={{ fontSize: "2rem", padding: "0.5rem", cursor: "pointer" }}
-          >
-            {" "}
-            {emoji}{" "}
-          </span>
-        ))
-      }
+      <h2> {emoji} </h2>
+      <h3> {meaning} </h3>
+      {emojis.map((emoji) => (
+        <span
+          onClick={() => emojiClickHandler(emoji)}
+          style={{ fontSize: "2rem", padding: "0.5rem", cursor: "pointer" }}
+        >
+          {" "}
+          {emoji}{" "}
+        </span>
+      ))}
     </div>
   );
 }

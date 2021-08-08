@@ -1,8 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Style+Script&display=swap");
 .App {
-  font-family: sans-serif;
+  font-family: "Style Script", cursive;
+  color: rgb(2, 15, 54);
   text-align: center;
-}
-
-#root {
-  background: url("./Images/Wallpaper.png");
 }
