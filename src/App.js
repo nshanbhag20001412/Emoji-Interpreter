@@ -7,7 +7,12 @@ const summerEmojis = {
   "🏄": "Person Surfing",
   "🐚": "Spiral Seashell",
   "🍹": "Tropical Drink",
-  "☀️": "Sun"
+  "☀️": "Sun",
+  "🐬": "Dolphin",
+  "🌳": "Deciduous Tree",
+  "⛱️": "Unmbrella on Ground",
+  "🍃": "Leaf Fluttering in Wind",
+  "🌴": "Palm Tree"
 };
 
 const emojis = Object.keys(summerEmojis);
